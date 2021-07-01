@@ -1,0 +1,16 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    color: #111;
+    background: #708090;
+}
+
+.container {
+    width: 800px;
+    margin: auto;
+}
+
+svg.canvas {
+    background: white;
+}
