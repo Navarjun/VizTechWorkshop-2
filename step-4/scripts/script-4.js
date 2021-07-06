@@ -8,8 +8,11 @@ let svg = d3.select('svg')
     .attr('width', width) // set width for the SVG
     .attr('height', height); // set the height for the SVG
 
-// Add an empty group which will contain all the points for the scatter-plot
-let containerG = svg.append('g');
+// Adding a circle in the SVG
+// svg.append('circle')
+//     .attr('cx', 100) // set the x-coordinate for the center
+//     .attr('cy', 100) // set the y-coordinate for the center
+//     .attr('r', 70);  // set the radius for the circle
 
 // load csv
 d3.csv('./data/sample.csv', processData)
@@ -23,13 +26,4 @@ function processData(row) {
 
 function dataLoaded(data) {
     console.log(data);
-
-    containerG.selectAll('circle')
-        .data(data)
-        .enter()
-        .append('circle')
-        .attr('cx', function(row) { return row.x; })
-        .attr('cy', function(row) { return height-row.y; })
-        .attr('data-y', function(row) { return row.y; })
-        .attr('r', 5);
 }
